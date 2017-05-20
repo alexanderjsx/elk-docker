@@ -1,3 +1,13 @@
+# Updated to handle UDP
+
+`docker build -t kwiff/elk . && docker run -p 5601:5601 -p 9200:9200 -p 5044:5044/udp -it --name elk kwiff/elk`
+
+`LOG_TO_LOGSTASH=true`
+`LOG_LOGSTASH_HOST=127.0.0.1`
+`LOG_LOGSTASH_PORT=5044`
+
+Open [Kibana](http://localhost:5601/)
+
 # Elasticsearch, Logstash, Kibana (ELK) Docker image
 
 [![](https://badge.imagelayers.io/sebp/elk:latest.svg)](https://imagelayers.io/?images=sebp/elk:latest 'Get your own badge on imagelayers.io')
@@ -55,7 +65,7 @@ The following tags are available:
 - `es232_l232_k450`: Elasticsearch 2.3.2, Logstash 2.3.2, and Kibana 4.5.0.
 
 - `es231_l231_k450`: Elasticsearch 2.3.1, Logstash 2.3.1, and Kibana 4.5.0.
- 
+
 - `es230_l230_k450`: Elasticsearch 2.3.0, Logstash 2.3.0, and Kibana 4.5.0.
 
 - `es221_l222_k442`: Elasticsearch 2.2.1, Logstash 2.2.2, and Kibana 4.4.2.
@@ -79,4 +89,3 @@ This image is hosted on Docker Hub at [https://hub.docker.com/r/sebp/elk/](https
 ### About
 
 Written by [Sébastien Pujadas](https://pujadas.net), released under the [Apache 2 license](https://www.apache.org/licenses/LICENSE-2.0).
-
